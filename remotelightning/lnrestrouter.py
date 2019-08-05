@@ -9,6 +9,7 @@ class LNCommandNotFound(Exception):
 
 # Todo abstract class for use with other daemons if needed
 class CLightningRESTRouter(object):
+    _connection = None
 
     def __init__(self, rpclocation=None):
         if not rpclocation:
@@ -25,4 +26,4 @@ class CLightningRESTRouter(object):
     lnconn = property(get_connection, _connect)
 
     def execute_cmd(self, command, cmd_args=[]):
-        cmd_result = getattr(self.lnconn, command)
+        cmd_result = getattr(self.lnconn, command)()
