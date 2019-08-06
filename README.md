@@ -15,6 +15,8 @@ Soon to be a plugin of c-lightning
 ### Configuring
 
 ##### Auth
+admin/admin are the default credentials 
+
 As of now only basic auth is supported. It can be set by configuring the `LN_RPC_USERNAME` and `LN_RPC_PASSWORD` 
 environment variables
 
@@ -27,7 +29,10 @@ variable
 
 ### Example Query
 
-GET
+```bash
+curl admin:admin@localhost:5000/api/v1/getinfo
+```
+
 
 ### Currently Implemented
 
